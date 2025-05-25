@@ -40,6 +40,7 @@ http://localhost:3000
 Create a `.env` file in the project root with the following structure:
 
 ```env
+place it inside backend/.env
 PORT=3000
 DATABASE_URL=your_postgres_connection_string
 GROQ_API_KEY=your_groq_api_key
