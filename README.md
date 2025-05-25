@@ -227,6 +227,38 @@ Backend/
 
 ```
 
+
+ ##Final Architecture
+
+                             ┌────────────────────────────┐
+                            │      React Frontend        │
+                            │                            │
+                            │  - Add / Edit / Delete     │
+                            │  - View Todos              │
+                            │  - Summarize Button        │
+                            └──────────┬─────────────────┘
+                                       │  REST API Calls
+                                       ▼
+                         ┌───────────────────────────────┐
+                         │      Express.js Backend        │
+                         │  (index.js, summarize.js)      │
+                         │                               │
+                         │  /todos         → CRUD routes │
+                         │  /summarize     → LLM + Slack │
+                         └──────────┬────────────────────┘
+                                    │
+                      ┌─────────────┼─────────────┐
+                      │                           │
+                      ▼                           ▼
+        ┌─────────────────────┐     ┌────────────────────────────┐
+        │   PostgreSQL DB     │     │   External APIs             │
+        │ "Todos" Table       │     │                            │
+        │  - id               │     │ - Groq API (LLM - LLaMA 3)  │
+        │  - title            │     │ - Slack Webhook             │
+        │  - description      │     └────────────────────────────┘
+        │  - completed        │
+        └─────────────────────┘
+
 ## Author
 
 **Abhishek Kumar Pandey**  
