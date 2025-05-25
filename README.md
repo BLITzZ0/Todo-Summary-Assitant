@@ -158,11 +158,72 @@ CREATE TABLE "Todos" (
 );
 ```
 
-## Developer Tips
 
-- Use [Postman](https://www.postman.com/) or [Hoppscotch](https://hoppscotch.io) to test APIs
-- Monitor request volume if you're using free-tier Groq
-- All requests to `/summarize` are logged to the console for debugging
+# Todo Summary Assistant - Frontend
+
+A sleek, full-stack todo list app with a built-in summarization feature that posts a summary of pending todos to Slack. Built with **React** and styled with custom **CSS**.
+
+## Features
+
+- Create, view, update, and delete todos
+- Inline editing of title and description
+- Summarize todos and send the summary to Slack
+- Clean, responsive UI with modern styling
+
+## Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/yourusername/todo-summary-assistant.git
+cd todo-summary-assistant
+```
+
+
+### 2. Frontend Setup (React)
+
+1. Navigate to the frontend folder:
+   ```bash
+   cd client
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Start the development server:
+   ```bash
+   npm start
+   ```
+
+> The frontend runs on **http://localhost:3001** (or similar)
+
+Make sure your frontend proxies API calls to the backend (`proxy` in `package.json`):
+
+```json
+"proxy": "http://localhost:3000"
+```
+
+---
+
+## UI Preview
+
+Styled with a clean, responsive layout using vanilla CSS (see `App.css`). Supports light hover animations, mobile-friendly forms, and consistent color themes.
+
+---
+
+## File Structure (Simplified)
+
+```
+frontend/
+├── src/
+│   ├── App.js          # Main React component
+│   ├── App.css         # Custom CSS styles
+│   └── index.js
+Backend/
+├── index.js            # Express.js server with CRUD & summarize routes
+├── summarize.js
 
 
 ## Author
