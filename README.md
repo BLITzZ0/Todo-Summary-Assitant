@@ -225,6 +225,7 @@ Backend/
 ├── index.js            # Express.js server with CRUD & summarize routes
 ├── summarize.js
 
+```
 
 ## Author
 
