@@ -1,24 +1,24 @@
-# 🧠 ToDo Summary Assistant – Backend
+# ToDo Summary Assistant – Backend
 
 This is the backend for the **ToDo Summary Assistant** — a full-stack productivity tool that allows users to manage their to-do items, summarize pending tasks using an LLM (via **Groq API**), and post those summaries to a **Slack channel**.
 
 Built with **Node.js (Express)** and designed to integrate easily with a frontend React application and a PostgreSQL database (e.g., Supabase).
 
-## 🚀 Features
+## Features
 
-- 📝 Create, read, and delete to-do items via REST API
-- 🤖 Summarize all pending tasks using **LLaMA 3** model from **Groq**
-- 💬 Send summarized todos to a Slack channel via Incoming Webhook
-- 🛡 Clean, modular code structure with `.env` support
+- Create, read, and delete to-do items via REST API
+- Summarize all pending tasks using **LLaMA 3** model from **Groq**
+- Send summarized todos to a Slack channel via Incoming Webhook
+- Clean, modular code structure with `.env` support
 
-## 🏗 Tech Stack
+## Tech Stack
 
 - **Backend**: Node.js + Express
 - **Database**: PostgreSQL (local or via Supabase)
 - **LLM Provider**: Groq API (OpenAI-compatible format)
 - **Messaging**: Slack Incoming Webhook
 
-## 📚 API Documentation
+## API Documentation
 
 ### Base URL
 
@@ -35,7 +35,7 @@ http://localhost:3000
 | DELETE | `/todos/:id`     | Delete a to-do by ID                     |
 | POST   | `/summarize`     | Summarize pending tasks and post to Slack |
 
-## 🔐 Environment Variables
+## Environment Variables
 
 Create a `.env` file in the project root with the following structure:
 
@@ -46,9 +46,9 @@ GROQ_API_KEY=your_groq_api_key
 SLACK_WEBHOOK_URL=https://hooks.slack.com/services/your/actual/webhook
 ```
 
-> ⚠️ Do not commit your `.env` file. Use `.env.example` to share variable names safely.
+> Do not commit your `.env` file. Use `.env.example` to share variable names safely.
 
-## 🤖 LLM Integration (Groq API)
+## LLM Integration (Groq API)
 
 This project uses [Groq](https://console.groq.com) to access **LLaMA 3**, a powerful open-source language model.
 
@@ -71,7 +71,7 @@ Using model:
 llama3-8b-8192
 ```
 
-## 💬 Slack Integration (Incoming Webhooks)
+## Slack Integration (Incoming Webhooks)
 
 1. Go to [https://api.slack.com/messaging/webhooks](https://api.slack.com/messaging/webhooks)
 2. Create a new **Incoming Webhook**
@@ -82,7 +82,7 @@ llama3-8b-8192
 SLACK_WEBHOOK_URL=https://hooks.slack.com/services/XXX/YYY/ZZZ
 ```
 
-## 🛠 Setup Instructions
+## Setup Instructions
 
 ### 1. Clone the Repository
 
@@ -117,9 +117,9 @@ Or for development with auto-reload:
 npx nodemon index.js
 ```
 
-## 🧪 Example API Calls
+## Example API Calls
 
-### ➕ Add a Todo
+### Add a Todo
 
 ```http
 POST /todos
@@ -132,13 +132,13 @@ Content-Type: application/json
 }
 ```
 
-### 🧾 Summarize and Send to Slack
+### Summarize and Send to Slack
 
 ```http
 POST /summarize
 ```
 
-> 💬 Response:
+> Response:
 
 ```json
 {
@@ -147,7 +147,7 @@ POST /summarize
 }
 ```
 
-## 🗃 Database Schema (PostgreSQL)
+## Database Schema (PostgreSQL)
 
 ```sql
 CREATE TABLE "Todos" (
@@ -158,13 +158,13 @@ CREATE TABLE "Todos" (
 );
 ```
 
-## 🧰 Developer Tips
+## Developer Tips
 
 - Use [Postman](https://www.postman.com/) or [Hoppscotch](https://hoppscotch.io) to test APIs
 - Monitor request volume if you're using free-tier Groq
 - All requests to `/summarize` are logged to the console for debugging
 
 
-## 👤 Author
+## Author
 
 **Abhishek Kumar Pandey**  
